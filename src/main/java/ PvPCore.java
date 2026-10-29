@@ -10,6 +10,7 @@ import org.bukkit.event.player.*;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.java.JavaPlugin;
 import org.bukkit.scoreboard.*;
+import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;
 
 import java.net.URI;
 import java.net.http.*;
@@ -159,7 +160,7 @@ public final class PvPCore extends JavaPlugin implements Listener, CommandExecut
     private boolean isInCombat(Player p) { return combatUntil.getOrDefault(p.getUniqueId(), 0L) > System.currentTimeMillis(); }
     private void updateTab(Player p) {
         List<String> header = getConfig().getStringList("tab.header"), footer = getConfig().getStringList("tab.footer");
-        p.sendPlayerListHeaderAndFooter(color(String.join("\n", header)), color(String.join("\n", footer)));
+        p.sendPlayerListHeaderAndFooter(LegacyComponentSerializer.legacySection().deserialize(color(String.join("\n", header))), LegacyComponentSerializer.legacySection().deserialize(color(String.join("\n", footer))));
     }
     private void updateBoard(Player p) {
         Scoreboard board = Bukkit.getScoreboardManager().getNewScoreboard();
