@@ -1,0 +1,43 @@
+server-ip: "play.example.net"
+discord-url: "https://discord.gg/yourinvite"
+heal-on-kill: true
+combat:
+  enabled: true
+  duration-seconds: 15
+  prevent-commands: true
+  allowed-commands: ["/msg", "/r", "/tell", "/discord", "/help"]
+  combat-log-punishment: true
+coins:
+  kill-reward: 5
+  starting-balance: 0
+tab:
+  enabled: true
+  header:
+    - "&8&m------------------------------"
+    - "&b&lPvP"
+    - "&bplay.example.net"
+  footer:
+    - ""
+scoreboard:
+  enabled: true
+  title: "&b&lPvP"
+  lines:
+    - "&8play.example.net"
+    - "&7"
+    - "&fOnline: &b%online%"
+    - "&fCoins: &6%coins%"
+    - "&fKills: &a%kills%"
+    - "&fDeaths: &c%deaths%"
+    - "&7"
+kits:
+  starter:
+    cooldown-seconds: 3600
+    permission: "pvpcore.kit.starter"
+    items:
+      - "STONE_SWORD:1"
+      - "COOKED_BEEF:16"
+      - "GOLDEN_APPLE:2"
+anti-vpn:
+  enabled: false
+  # Requires outbound HTTPS access. This uses ip-api.com's JSON endpoint; review its terms/rate limits before enabling.
+  kick-message: "&cVPN/proxy connections are not allowed on this server."

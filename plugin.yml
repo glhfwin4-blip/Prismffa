@@ -1,0 +1,23 @@
+name: PvPCore
+version: 1.0.0
+main: com.example.pvpcore.PvPCore
+api-version: '1.21'
+author: Server Owner
+description: Minimal PvP core with heal-on-kill, combat tag, kits, coins, TAB and scoreboard.
+commands:
+  kit:
+    description: View or claim a PvP kit
+    usage: /kit [starter]
+  coins:
+    description: Check your coins balance
+    usage: /coins [player]
+  discord:
+    description: Show the community Discord invite
+    usage: /discord
+  pvpcore:
+    description: PvPCore admin commands
+    usage: /pvpcore reload
+permissions:
+  pvpcore.admin:
+    description: Manage PvPCore
+    default: op
